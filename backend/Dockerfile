@@ -74,11 +74,11 @@ RUN chown -R nodejs:nodejs /app
 # Usar usuário nodejs (prisma migrate deploy funcionará com este usuário)
 USER nodejs
 
-EXPOSE 3000
+EXPOSE 3066
 
 # Healthcheck
 HEALTHCHECK --interval=30s --timeout=10s --start-period=40s --retries=3 \
-  CMD wget --quiet --tries=1 --spider http://localhost:3000/health || exit 1
+  CMD wget --quiet --tries=1 --spider http://localhost:3066/health || exit 1
 
 # Usar entrypoint para executar migrações antes de iniciar
 ENTRYPOINT ["/app/docker-entrypoint.sh"]
