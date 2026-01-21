@@ -1,13 +1,13 @@
 import { useState } from "react";
-import { 
-  Headphones, 
-  Eye, 
-  BookUser, 
-  Megaphone, 
-  Table2, 
-  Filter, 
-  Ban, 
-  FileText, 
+import {
+  Headphones,
+  Eye,
+  BookUser,
+  Megaphone,
+  Table2,
+  Filter,
+  Ban,
+  FileText,
   BarChart3,
   RefreshCw,
   Phone,
@@ -27,7 +27,7 @@ import {
 } from "lucide-react";
 import { useLocation, Link } from "react-router-dom";
 import { cn } from "@/lib/utils";
-import { VendLogo } from "./VendLogo";
+import { ClasseALogo } from "./ClasseALogo";
 import { useAuth } from "@/contexts/AuthContext";
 import { UserRole } from "@/types/auth";
 import { NotificationSettingsDialog } from "@/components/settings/NotificationSettingsDialog";
@@ -72,12 +72,12 @@ export function AppSidebar() {
   const { theme, setTheme } = useTheme();
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  
+
   if (!user) return null;
 
   const filteredItems = menuItems.filter(item => item.roles.includes(user.role));
   const initials = user.name.split(' ').map(n => n[0]).join('').toUpperCase().slice(0, 2);
-  
+
   const roleLabels: Record<UserRole, string> = {
     admin: 'Administrador',
     supervisor: 'Supervisor',
@@ -94,7 +94,7 @@ export function AppSidebar() {
     <>
       {/* Logo */}
       <div className="p-6 border-b border-sidebar-border flex justify-center">
-        <VendLogo size="xl" showText={false} />
+        <ClasseALogo size="xl" showText={false} />
       </div>
 
       {/* Navigation */}
@@ -103,7 +103,7 @@ export function AppSidebar() {
           {filteredItems.map((item) => {
             const isActive = location.pathname === item.url;
             const Icon = item.icon;
-            
+
             return (
               <li key={item.url}>
                 <Link
@@ -123,7 +123,7 @@ export function AppSidebar() {
               </li>
             );
           })}
-          
+
           {/* Separador */}
           <li className="pt-2 mt-2 border-t border-sidebar-border">
             <button
@@ -143,7 +143,7 @@ export function AppSidebar() {
               </span>
             </button>
           </li>
-          
+
           <li>
             <button
               onClick={() => setIsSettingsOpen(true)}
@@ -205,9 +205,9 @@ export function AppSidebar() {
         </SheetContent>
       </Sheet>
 
-      <NotificationSettingsDialog 
-        open={isSettingsOpen} 
-        onOpenChange={setIsSettingsOpen} 
+      <NotificationSettingsDialog
+        open={isSettingsOpen}
+        onOpenChange={setIsSettingsOpen}
       />
     </>
   );

@@ -7,15 +7,15 @@ let authToken: string | null = null;
 export const setAuthToken = (token: string | null) => {
   authToken = token;
   if (token) {
-    localStorage.setItem('vend_token', token);
+    localStorage.setItem('classea_token', token);
   } else {
-    localStorage.removeItem('vend_token');
+    localStorage.removeItem('classea_token');
   }
 };
 
 export const getAuthToken = (): string | null => {
   if (authToken) return authToken;
-  return localStorage.getItem('vend_token');
+  return localStorage.getItem('classea_token');
 };
 
 // API Request helper

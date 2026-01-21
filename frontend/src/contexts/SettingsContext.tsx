@@ -22,7 +22,7 @@ const defaultNotificationSettings: NotificationSettings = {
   errorSound: true,
 };
 
-const STORAGE_KEY = 'vend-settings';
+const STORAGE_KEY = 'classea-settings';
 
 const SettingsContext = createContext<SettingsContextType | undefined>(undefined);
 

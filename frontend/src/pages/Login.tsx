@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { VendLogo } from "@/components/layout/VendLogo";
+import { ClasseALogo } from "@/components/layout/ClasseALogo";
 import { GlassCard } from "@/components/ui/glass-card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -19,9 +19,9 @@ export default function Login() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError("");
-    
+
     const success = await login(email, password);
-    
+
     if (success) {
       navigate("/");
     } else {
@@ -41,9 +41,9 @@ export default function Login() {
       <GlassCard className="w-full max-w-md animate-scale-in relative z-10" padding="lg">
         <div className="flex flex-col items-center mb-8">
           <div className="w-40 h-40 flex items-center justify-center mb-6">
-            <img 
-              src="/vendLogo.png" 
-              alt="Vend & Pasch Logo" 
+            <img
+              src="/classeLogo.png"
+              alt="Classe A Logo"
               className="w-full h-full object-contain"
             />
           </div>
@@ -96,8 +96,8 @@ export default function Login() {
             <p className="text-sm text-destructive text-center animate-fade-in">{error}</p>
           )}
 
-          <Button 
-            type="submit" 
+          <Button
+            type="submit"
             className="w-full h-12 text-base font-semibold"
             disabled={isLoading}
           >
@@ -113,7 +113,7 @@ export default function Login() {
         </form>
 
         <p className="text-xs text-center text-muted-foreground mt-8">
-          © 2025 Vend. Todos os direitos reservados.
+          © 2025 Classe A. Todos os direitos reservados.
         </p>
       </GlassCard>
     </div>
