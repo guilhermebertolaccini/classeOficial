@@ -94,7 +94,13 @@ export function AppSidebar() {
     <>
       {/* Logo */}
       <div className="p-6 border-b border-sidebar-border flex justify-center">
-        <ClasseALogo size="xl" showText={false} />
+        <div className="w-44 h-44 flex items-center justify-center">
+          <img
+            src="/classeLogo.png"
+            alt="Classe A Logo"
+            className="w-full h-full object-contain"
+          />
+        </div>
       </div>
 
       {/* Navigation */}
